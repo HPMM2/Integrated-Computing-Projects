@@ -1,0 +1,5 @@
+stress --cpu 3 --timeout 60s
+
+stress --cpu 4 --timeout 60s
+
+stress --vm-bytes $(awk '/MemTotal/{printf "%d\n", $2 * 0.65;}' < /proc/meminfo)k --vm-keep -m 1
